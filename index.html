@@ -92,7 +92,7 @@ button, a { touch-action: manipulation; }
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 20px 8px 20px 0;
+  padding: 20px 16px;
   cursor: pointer;
   list-style: none;
   color: var(--grf-black);
@@ -127,13 +127,13 @@ button, a { touch-action: manipulation; }
 .faq-icon .v { transform-origin: 50% 50%; }
 .faq-item[open] .faq-icon .v { display: none; }
 
-.faq-item summary:hover { background: var(--granit-5); }
+.faq-item:hover { background: var(--granit-5); }
 .faq-item summary:hover .faq-question { color: var(--granit-hover); }
 .faq-item summary:hover .faq-icon,
 .faq-item[open] .faq-icon { background: var(--granit); border-color: var(--granit); color: #fff; }
 .faq-item summary:focus-visible { outline: 2px solid var(--granit-hover); outline-offset: -2px; }
 
-.faq-answer { padding: 0 56px 24px 0; color: var(--grf-black-80); }
+.faq-answer { padding: 0 64px 24px 16px; color: var(--grf-black-80); }
 .faq-answer > :first-child { margin-top: 0; }
 .faq-answer > :last-child { margin-bottom: 0; }
 .faq-answer p { margin: 0 0 12px; }
@@ -144,8 +144,8 @@ button, a { touch-action: manipulation; }
 .faq-answer a:focus-visible { outline: 2px solid var(--granit-hover); outline-offset: 2px; }
 
 @media (max-width: 600px) {
-  .faq-item summary { padding: 16px 0; }
-  .faq-answer { padding-right: 0; padding-bottom: 20px; }
+  .faq-item summary { padding: 16px; }
+  .faq-answer { padding: 0 16px 20px; }
   .intro { font-size: 20px; line-height: 32px; }
 }
 </style>
