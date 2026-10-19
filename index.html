@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Häufige Fragen</title>
+<style>
+/* GRF web fonts - zentral im Repository grf-fonts (GitHub Pages) */
+@font-face {
+  font-family: "CircularGraubuendenWeb";
+  src: url("https://graubuendenferien-sudo.github.io/grf-fonts/CirculargraubuendenWeb-Book.woff2") format("woff2");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "CircularGraubuendenWeb";
+  src: url("https://graubuendenferien-sudo.github.io/grf-fonts/CirculargraubuendenWeb-Bold.woff2") format("woff2");
+  font-weight: 600 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "TheMix";
+  src: url("https://graubuendenferien-sudo.github.io/grf-fonts/TheMix_500_.woff2") format("woff2");
+  font-weight: 400 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "TheMix";
+  src: url("https://graubuendenferien-sudo.github.io/grf-fonts/TheMix_700_.woff2") format("woff2");
+  font-weight: 600 700; font-style: normal; font-display: swap;
+}
+
+:root {
+  --granit: #79775F;
+  --granit-25: #E0DFD9;
+  --granit-10: #F2F2F0;
+  --granit-5: #F9F9F7;
+  --granit-hover: #666450;
+  --grf-black: #191813;
+  --grf-black-80: #474642;
+  --font-circular: "CircularGraubuendenWeb", "Circular Std", "CircularStd", "DM Sans", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --font-mix: "TheMix", "TheMixOsF", "TheMix Plain", "Alegreya Sans", "Gill Sans", "Trebuchet MS", sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; height: auto; }
+body {
+  background: #fff;
+  color: var(--grf-black);
+  font-family: var(--font-circular);
+  font-size: 16px;
+  line-height: 24px;
+  -webkit-text-size-adjust: 100%;
+}
+button, a { touch-action: manipulation; }
+
+.faq { padding: 4px 0 8px; max-width: 920px; }
+
+/* Topline + Titel */
+.page-intro { margin: 0 0 24px; }
+.topline {
+  margin: 0;
+  font-family: var(--font-circular);
+  font-size: clamp(32px, 9vw, 40px);
+  font-weight: 700;
+  letter-spacing: -.02em;
+  line-height: 1.24;
+}
+.title {
+  margin: 2px 0 0;
+  font-family: var(--font-mix);
+  font-size: clamp(30px, 8vw, 36px);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.25;
+}
+.intro {
+  margin: 16px 0 0;
+  font-size: 18px;
+  line-height: 30px;
+  color: var(--grf-black-80);
+}
+@media (min-width: 761px) {
+  .page-intro { margin-bottom: 32px; }
+  .topline { font-size: clamp(32px, 3.6vw, 42px); }
+  .title { font-size: clamp(32px, 3.5vw, 40px); }
+}
+
+/* Akkordeon */
+.faq-list { border-top: 1px solid var(--granit-25); }
+.faq-item { border-bottom: 1px solid var(--granit-25); background: #fff; }
+
+.faq-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 8px 20px 0;
+  cursor: pointer;
+  list-style: none;
+  color: var(--grf-black);
+  -webkit-tap-highlight-color: transparent;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::marker { content: ""; }
+
+.faq-question {
+  margin: 0;
+  min-width: 0;
+  font-family: var(--font-circular);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 30px;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+.faq-icon {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--granit-10);
+  border: 1px solid var(--granit-25);
+  color: var(--granit-hover);
+}
+.faq-icon svg { display: block; }
+.faq-icon .v { transform-origin: 50% 50%; }
+.faq-item[open] .faq-icon .v { display: none; }
+
+.faq-item summary:hover { background: var(--granit-5); }
+.faq-item summary:hover .faq-question { color: var(--granit-hover); }
+.faq-item summary:hover .faq-icon,
+.faq-item[open] .faq-icon { background: var(--granit); border-color: var(--granit); color: #fff; }
+.faq-item summary:focus-visible { outline: 2px solid var(--granit-hover); outline-offset: -2px; }
+
+.faq-answer { padding: 0 56px 24px 0; color: var(--grf-black-80); }
+.faq-answer > :first-child { margin-top: 0; }
+.faq-answer > :last-child { margin-bottom: 0; }
+.faq-answer p { margin: 0 0 12px; }
+.faq-answer ul, .faq-answer ol { margin: 0 0 12px; padding-left: 20px; }
+.faq-answer li { margin-bottom: 4px; }
+.faq-answer a { color: var(--granit); text-decoration: underline; text-underline-offset: 2px; }
+.faq-answer a:hover, .faq-answer a:focus-visible { color: var(--granit-hover); }
+.faq-answer a:focus-visible { outline: 2px solid var(--granit-hover); outline-offset: 2px; }
+
+@media (max-width: 600px) {
+  .faq-item summary { padding: 16px 0; }
+  .faq-answer { padding-right: 0; padding-bottom: 20px; }
+  .intro { font-size: 20px; line-height: 32px; }
+}
+</style>
+</head>
+<body>
+
+<!--
+  FAQ-MODUL – Bedienung für Redaktion
+  Eine Frage = ein Block <details class="faq-item" ...> bis </details>.
+  Block kopieren, Frage (<h2 itemprop="name">) und Antwort (<div itemprop="text">) ersetzen.
+  Die Schema.org-Attribute (itemscope, itemtype, itemprop) NICHT entfernen.
+  Antworten dürfen <p>, <ul>, <ol>, <a>, <strong> enthalten.
+  Erste Frage standardmässig offen: im ersten <details> das Attribut open ergänzen.
+-->
+
+<main class="faq" itemscope itemtype="https://schema.org/FAQPage">
+
+  <header class="page-intro">
+    <p class="topline">Gut zu wissen.</p>
+    <h1 class="title" itemprop="name">Häufige Fragen</h1>
+    <p class="intro" itemprop="description">Dummy-Text: Hier steht eine kurze Einleitung, die das Thema der Fragen und Antworten beschreibt.</p>
+  </header>
+
+  <div class="faq-list">
+
+    <details class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+      <summary>
+        <h2 class="faq-question" itemprop="name">Dummy-Frage 1: Wie lautet die erste Frage?</h2>
+        <span class="faq-icon" aria-hidden="true">
+          <svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10"/><path class="v" d="M8 3v10"/></svg>
+        </span>
+      </summary>
+      <div class="faq-answer" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+        <div itemprop="text">
+          <p>Dummy-Antwort: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+      <summary>
+        <h2 class="faq-question" itemprop="name">Dummy-Frage 2: Eine Antwort mit einer Aufzählung?</h2>
+        <span class="faq-icon" aria-hidden="true">
+          <svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10"/><path class="v" d="M8 3v10"/></svg>
+        </span>
+      </summary>
+      <div class="faq-answer" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+        <div itemprop="text">
+          <p>Dummy-Antwort: Stet clita kasd gubergren, no sea takimata sanctus est.</p>
+          <ul>
+            <li>Erster Punkt der Aufzählung</li>
+            <li>Zweiter Punkt der Aufzählung</li>
+            <li>Dritter Punkt der Aufzählung</li>
+          </ul>
+        </div>
+      </div>
+    </details>
+
+    <details class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+      <summary>
+        <h2 class="faq-question" itemprop="name">Dummy-Frage 3: Eine Antwort mit einem Link?</h2>
+        <span class="faq-icon" aria-hidden="true">
+          <svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10"/><path class="v" d="M8 3v10"/></svg>
+        </span>
+      </summary>
+      <div class="faq-answer" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+        <div itemprop="text">
+          <p>Dummy-Antwort: Weitere Informationen finden Sie auf <a href="https://www.graubuenden.ch" target="_blank" rel="noopener">graubuenden.ch</a>.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+      <summary>
+        <h2 class="faq-question" itemprop="name">Dummy-Frage 4: Eine sehr lange Frage, damit man sieht, wie der Umbruch auf dem Handy aussieht, auch bei Wörtern wie Landwirtschaftsdirektion?</h2>
+        <span class="faq-icon" aria-hidden="true">
+          <svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10"/><path class="v" d="M8 3v10"/></svg>
+        </span>
+      </summary>
+      <div class="faq-answer" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+        <div itemprop="text">
+          <p>Dummy-Antwort, erster Absatz: At vero eos et accusam et justo duo dolores et ea rebum.</p>
+          <p>Dummy-Antwort, zweiter Absatz: Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+      <summary>
+        <h2 class="faq-question" itemprop="name">Dummy-Frage 5: Wie lautet die letzte Frage?</h2>
+        <span class="faq-icon" aria-hidden="true">
+          <svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10"/><path class="v" d="M8 3v10"/></svg>
+        </span>
+      </summary>
+      <div class="faq-answer" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+        <div itemprop="text">
+          <p>Dummy-Antwort: Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis.</p>
+        </div>
+      </div>
+    </details>
+
+  </div>
+</main>
+
+<script>
+/* ===== GRF Auto-Height Sender – NICHT VERÄNDERN ===== */
+(function () {
+  var lastHeight = 0, scheduled = false;
+  function getHeight() {
+    var b = document.body;
+    if (!b) return 0;
+    return Math.ceil(Math.max(b.scrollHeight, b.offsetHeight, b.getBoundingClientRect().height));
+  }
+  function send() {
+    scheduled = false;
+    var h = getHeight();
+    if (h > 0 && Math.abs(h - lastHeight) > 1) {   // nur echte Änderungen senden, kein Loop
+      lastHeight = h;
+      window.parent.postMessage({ height: h }, '*');
+    }
+  }
+  function schedule() {
+    if (scheduled) return;
+    scheduled = true;
+    (window.requestAnimationFrame || setTimeout)(send);
+  }
+  window.addEventListener('load', schedule);
+  window.addEventListener('resize', schedule);
+  window.addEventListener('orientationchange', function () { setTimeout(schedule, 300); });
+  document.addEventListener('click', function () { setTimeout(schedule, 100); }, true);
+  if (window.ResizeObserver) new ResizeObserver(schedule).observe(document.body);
+  if (window.MutationObserver) {
+    new MutationObserver(schedule).observe(document.body, {
+      childList: true, subtree: true, attributes: true, characterData: true
+    });
+  }
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(schedule);
+  [100, 500, 1500].forEach(function (t) { setTimeout(schedule, t); });
+  schedule();
+})();
+</script>
+</body>
+</html>
